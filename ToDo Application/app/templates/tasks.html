@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='tasks.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>ToDo App</h1>
+      </div>
+      <div class="navbar-buttons">
+        <form action="{{ url_for('analysis') }}" method="post">          
+          <button class="analysis-button">Analysis</button>
+        </form>        
+        <form action="{{ url_for('logout') }}" method="post">          
+          <button class="logout-button">Logout</button>
+        </form>        
+      </div>
+    </nav>
+    <div class="container">
+      <div class="add-task">
+        <h2>Add Task</h2>
+        <form action="{{ url_for('tasks') }}" method="POST">
+          <input
+            placeholder="Title"
+            type="text"
+            id="title"
+            name="title"
+            required
+          />
+
+          <textarea
+            placeholder="Description"
+            id="description"
+            name="description"
+            required
+          ></textarea>
+
+          <input
+            placeholder="Deadline"
+            type="datetime-local"
+            id="deadline"
+            name="deadline"
+            required
+          />
+
+          <select id="task_type" name="task_type" required>
+            <option value="" disabled selected>Task Type</option>
+            <option value="Health">Health</option>
+            <option value="Job">Job</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Family">Family</option>
+            <option value="Hobbies">Hobbies</option>
+          </select>
+
+          <button type="submit" class="add-button">Add</button>
+        </form>
+      </div>
+      <div class="task-list">
+        <h2>ToDo</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Deadline</th>
+              <th>Creation Time</th>
+              <th>Task Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task in taskList %}
+            <tr>
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ task.deadline }}</td>
+              <td>{{ task.creation_time }}</td>
+              <td>{{ task.task_type }}</td>
+              <td>
+                <div class="task_buttons">
+                  <form action="{{ url_for('delete_task') }}" method="post">
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button class="delete-button">Delete</button>
+                  </form>
+                  <form action="{{ url_for('edit_task') }}" method="post">
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button class="edit-button">Edit</button>
+                  </form>
+                  <form action="{{ url_for('done_task') }}" method="post">
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button class="done-button">Done</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="done-list">
+        <h2>Done</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Deadline</th>
+              <th>Creation Time</th>
+              <th>Done Time</th>
+              <th>Task Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task in doneList %}
+            <tr>
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ task.deadline }}</td>
+              <td>{{ task.creation_time }}</td>
+              <td>{{ task.done_time }}</td>
+              <td>{{ task.task_type }}</td>
+              <td>
+                <form action="{{ url_for('delete_task') }}" method="post">
+                  <input type="hidden" name="task_id" value="{{ task.id }}" />
+                  <button class="delete-button">Delete</button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='analysis.css') }}"
+    />
+    <body>
+      <a href="{{ url_for('tasks') }}">Go Back</a>
+      <h1>Analysis Page</h1>      
+      <div class="query_results">
+        <h3>1- Title and latency of the tasks that were completed after their deadlines:</h3>
+        <p>{{ firstQuery }}</p>
+        <h3>2- The average task completion time:</h3>
+        <p>{{ secondQuery }}</p>
+        <h3>3- Number of the completed tasks per task type, in descending order:</h3>
+        <p>{{ thirdQuery }}</p>
+        <h3>4- Title and deadline of uncompleted tasks in increasing order of deadlines:</h3>
+        <p>{{ fourthQuery }}</p>
+        <h3>5- Title and task completion time of the top 2 completed tasks that took the most time, in
+          descending order:</h3>
+        <p>{{ fifthQuery }}</p>
+      </div>      
+    </body>
+  </head>
+</html>

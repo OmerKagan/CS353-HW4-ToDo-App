@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set default font and background color */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #115a13;
+    color: white;
+    padding: 10px;
+  }
+  
+  .navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-buttons {
+    color: white;    
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .analysis-button {
+  background-color: #fff;
+	color: #115a13;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px 20px; 
+  margin-right: 10px; 
+	font-size: 16px;
+  transition: background-color 0.3s ease;
+  }
+
+  .logout-button {
+  background-color: #fff;
+	color: #115a13;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px 20px;	
+	font-size: 16px;
+  transition: background-color 0.3s ease;
+  }
+  
+  .analysis-button:hover {
+    background-color: #777777;
+    color: #fff;
+  }
+
+  .logout-button:hover {
+    background-color: #777777;
+    color: #fff;
+  }  
+  
+  /* Style the Add Task section */
+  .add-task {
+    background-color: #4CAF50;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .add-task h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .add-task form {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-between;    
+  }  
+  
+  .add-task input,
+  .add-task textarea,
+  .add-task select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 20%;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-task button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #115a13;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    align-self: flex-end;
+  }
+  
+  .add-task button:hover {
+    background-color: #777777;
+    color: #fff;
+  }
+    
+  .task-list {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .task-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(165, 3, 3);
+  }
+  
+  .task-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .task-list th,
+  .task-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .task-list th {
+    font-weight: bold;
+    color: rgb(165, 3, 3);
+  }
+  
+  .task-list td:last-child {
+    text-align: center;
+  }
+
+  .done-list {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .done-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(4, 170, 32);
+  }
+  
+  .done-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .done-list th,
+  .done-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .done-list th {
+    font-weight: bold;
+    color: rgb(4, 170, 32);
+  }
+  
+  .done-list td:last-child {
+    text-align: center;
+  }
+
+  .task_buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .delete-button {
+    background-color: rgb(165, 3, 3);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 10px;	
+    font-size: 10px;
+    transition: background-color 0.3s ease;
+    }
+    
+    .delete-button:hover {
+      background-color: #777777;
+      color: #fff;
+    }
+
+    .edit-button {
+      background-color:rgb(195, 212, 3);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px 10px;	
+      font-size: 10px;
+      transition: background-color 0.3s ease;
+    }
+      
+    .edit-button:hover {
+      background-color: #777777;
+      color: #fff;
+    }
+
+    .done-button {
+      background-color: rgb(4, 170, 32);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px 10px;	
+      font-size: 10px;
+      transition: background-color 0.3s ease;
+    }
+        
+    .done-button:hover {
+      background-color: #777777;
+      color: #fff;
+    }
